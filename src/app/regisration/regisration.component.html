@@ -1,0 +1,77 @@
+<mat-toolbar>
+     
+    <span>{{title}}</span>
+ </mat-toolbar>
+ <mat-card class="my-card">
+    <mat-card-content>
+       <form class="my-form">
+          <mat-form-field class="full-width">
+             <mat-label>First Name</mat-label>
+             <input  matInput  placeholder="First name"  [formControl]="fname" [errorStateMatcher]="matcher" name="fname"  required>
+             <mat-error *ngIf="fname.hasError('required')">
+               FirstName is <strong> required </strong>
+             </mat-error>
+          </mat-form-field>
+          
+          <mat-form-field class="full-width">
+             <mat-label>Last Name</mat-label>
+             <input  matInput  placeholder="Last Name" [formControl]="lname" [errorStateMatcher]="matcher" name="lname"  required>
+             <mat-error *ngIf="lname.hasError('required')">
+               LastName is <strong> required</strong>
+            </mat-error>
+          </mat-form-field>
+
+               <!-- new added datepicker -->
+
+          <mat-form-field class="full-width">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" [formControl]="dob" [errorStateMatcher]="matcher" required>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="dob.hasError('required')">
+               DOB is <strong> required</strong>
+
+            </mat-error>
+          </mat-form-field>
+ 
+          <!-- new added gender -->
+          
+          
+            <mat-radio-group aria-label="Select an option">
+               <mat-radio-button value="1">Male</mat-radio-button>
+               <mat-radio-button value="2">Female</mat-radio-button>
+             </mat-radio-group> 
+             
+              <!-- address -->
+          <mat-form-field class="full-width">
+             <mat-label>Address</mat-label>
+             <input  matInput  placeholder="Address" name="address" [formControl]="address" [errorStateMatcher]="matcher"  w>
+             <mat-error *ngIf="address.hasError('required')">
+                 Address is <strong> required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <!-- email -->
+
+          <mat-form-field class="full-width">
+             <mat-label>Email</mat-label>
+             <input  matInput  placeholder="Email" name="email" [formControl]="email" [errorStateMatcher]="matcher">
+             <mat-error *ngif="email.hasError('required')">
+               
+
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+             <mat-label>Password</mat-label>
+             <input  matInput  placeholder="Password"  name="password" [formControl]="pwd" [errorStateMatcher]="matcher" required>
+          </mat-form-field>
+       </form>
+    </mat-card-content>
+    <!-- <mat-card-actions>
+       <button mat-raised-button (click)="" color="primary">REGISTER</button>
+     </mat-card-actions> -->
+ 
+ 
+ 
+ </mat-card>

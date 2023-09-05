@@ -1,0 +1,19 @@
+
+
+
+.my-form{
+    min-width: 200px;
+    max-width: 500px;
+    width: 100%;
+  }
+  .full-width {
+    width: 100%;
+  }
+  span{
+
+    font-size: 40px;
+  }
+  .mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+  }
+  
